@@ -14,10 +14,10 @@ const VA_IMAGES = [
 ];
 
 const placeholderImages = [
-  'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  '/img/studio-1.png',
+  '/img/studio-2.png',
+  '/img/studio-3.png',
+  '/img/studio-4.png',
 ];
 
 const STATS = [
@@ -96,7 +96,7 @@ export default function AboutMeSection() {
             className="relative"
           >
             <div 
-              className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+              className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl"
               onMouseEnter={() => setIsAutoPlaying(false)}
               onMouseLeave={() => setIsAutoPlaying(true)}
             >
@@ -198,10 +198,11 @@ export default function AboutMeSection() {
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
                 Your Partner in <span className="text-blue-600">Business Excellence</span>
               </h3>
-              <p className="text-gray-600 text-lg mb-4">
-                With over 8 years of experience in virtual assistance and workflow optimization, 
-                I specialize in creating efficient systems that help businesses save time, reduce costs, 
-                and scale effectively.
+              <p className="text-gray-600 text-lg md:text-sm mb-4">
+                I&apos;m Fajobi, a dedicated Virtual Assistant and Workflow Automation Specialist committed to helping businesses and busy professionals simplify their processes, save time, and work more efficiently.
+              </p>
+              <p className="text-gray-600 text-lg md:text-sm mb-4">
+                I&apos;m so glad you&apos;re here. This space is more than just a portfolio, it&apos;s a glimpse into the work I love, the problems I help solve, and the care I bring to every task. Whether it&apos;s organizing systems, streamlining workflows, or helping businesses stay focused on what matters most, my goal is to add value with intention and excellence. Take a moment to explore. Every project and service reflects my commitment to clarity, efficiency, and results. I hope something here connects with what you&apos;re looking for. And if it does, let&apos;s connect and create something meaningful together
               </p>
               <p className="text-gray-600 text-lg">
                 My mission is to transform chaotic workflows into streamlined processes, allowing you 
