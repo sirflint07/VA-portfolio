@@ -290,7 +290,8 @@ export default function Home() {
 
       <footer className="bg-slate-950 text-slate-400 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <p>&copy; {new Date().getFullYear()} VA Solutions. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Fajobi Abiodun. All rights reserved.</p>
+          <p className='text-xs mt-1'>Developed by <span className='opcity-60 text-sm text-slate-100 font-bold'><a className='hover:text-emerald-400 cursor-pointer' href='https://golden-designs-studio.vercel.app/' target='_blank'>Michael Oluwaseun</a></span></p>
         </div>
       </footer>
     </div>
