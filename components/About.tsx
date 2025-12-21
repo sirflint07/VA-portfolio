@@ -22,9 +22,9 @@ const placeholderImages = [
 
 const STATS = [
   { number: '99%', label: 'Client Satisfaction', icon: <Sparkles className="w-5 h-5" /> },
-  { number: '500+', label: 'Projects Completed', icon: <Target className="w-5 h-5" /> },
+  { number: '50+', label: 'Projects Completed', icon: <Target className="w-5 h-5" /> },
   { number: '40%', label: 'Cost Reduction', icon: <TrendingUp className="w-5 h-5" /> },
-  { number: '70%', label: 'Time Saved', icon: <Zap className="w-5 h-5" /> },
+  { number: '75%', label: 'Time Saved', icon: <Zap className="w-5 h-5" /> },
 ];
 
 const SKILLS = [
@@ -114,11 +114,11 @@ export default function AboutMeSection() {
                   alt={`Virtual Assistant ${currentImage + 1}`}
                   className="w-full h-full object-cover"
                 />
-                {/* Gradient Overlay */}
+                
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </motion.div>
 
-              {/* Navigation Buttons */}
+              
               <button
                 onClick={prevImage}
                 className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
@@ -132,7 +132,7 @@ export default function AboutMeSection() {
                 <ChevronRight className="w-6 h-6 text-gray-800" />
               </button>
 
-              {/* Image Indicators */}
+              
               <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
                 {placeholderImages.map((_, index) => (
                   <button
@@ -147,7 +147,7 @@ export default function AboutMeSection() {
                 ))}
               </div>
 
-              {/* Badge */}
+             
               <div className="absolute top-6 left-6">
                 <motion.div
                   initial={{ scale: 0 }}
@@ -186,14 +186,14 @@ export default function AboutMeSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Content */}
+          
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
             className="space-y-8"
           >
-            {/* Introduction */}
+            
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
                 Your Partner in <span className="text-blue-600">Business Excellence</span>
@@ -253,7 +253,7 @@ export default function AboutMeSection() {
               </div>
             </div>
 
-            {/* CTA Button */}
+            
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

@@ -1,11 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Zap, Clock, Target, Mail, Linkedin, Github, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Zap, Clock, Target, Mail, Linkedin, Github, CheckCircle2, Twitter, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import AboutMeSection from '@/components/About';
 import TestimonialsGrid from '@/components/Testimonials';
+import MyStory from '@/components/MyStory';
+import SimpleInfiniteToolScroll from '@/components/Tools';
 
 export default function Home() {
   const services = [
@@ -56,7 +58,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               className="font-bold text-xl text-slate-900"
             >
-              VA Solutions
+              Fajobi Abiodun - VA Assistant
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -117,9 +119,11 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <div className="h-2 w-full bg-white/30 rounded"></div>
-                    <div className="h-2 w-5/6 bg-white/20 rounded"></div>
-                    <div className="h-2 w-4/6 bg-white/20 rounded"></div>
+                    <div className="h-fit w-full bg-white/30 rounded p-1"><span className='text-white font-sm font-semibold inline-block opacity-70'>VA Expert</span></div>
+                    <div className="h-fit w-5/6 bg-white/20 rounded p-1">
+                    <span className='text-white font-sm font-semibold inline-block opacity-70'>Digital architect</span>
+                    </div>
+                    <div className="h-2 w-4/6 bg-white/20 rounded py-4 px-2"></div>
                   </div>
                 </div>
               </div>
@@ -182,6 +186,7 @@ export default function Home() {
       </section>
 
       <AboutMeSection />
+      <MyStory />
       <TestimonialsGrid />
 
       <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -217,6 +222,7 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+          <SimpleInfiniteToolScroll />
         </div>
       </section>
 
@@ -236,7 +242,7 @@ export default function Home() {
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                href="mailto:hello@example.com"
+                href="mailto:fajobiabiodun99@gmail.com"
                 className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-slate-900 hover:bg-emerald-500 hover:text-white transition-colors"
               >
                 <Mail className="w-6 h-6" />
@@ -244,7 +250,7 @@ export default function Home() {
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://linkedin.com"
+                href="https://shorturl.at/xJRgL"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-slate-900 hover:bg-emerald-500 hover:text-white transition-colors"
@@ -254,16 +260,27 @@ export default function Home() {
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://github.com"
+                href="https://shorturl.at/xJRgL"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-slate-900 hover:bg-emerald-500 hover:text-white transition-colors"
               >
-                <Github className="w-6 h-6" />
+                <Twitter className='size-6'/>
+              </motion.a>
+
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://web.facebook.com/fajobi.abiodunemmanuel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-slate-900 hover:bg-emerald-500 hover:text-white transition-colors"
+              >
+                <Facebook className='size-6'/>
               </motion.a>
             </div>
             <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white" asChild>
-              <a href="mailto:hello@example.com">
+              <a href="mailto:fajobiabiodun99@gmail.com">
                 Send Message <ArrowRight className="ml-2 w-4 h-4" />
               </a>
             </Button>
