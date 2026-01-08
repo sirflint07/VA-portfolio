@@ -73,7 +73,7 @@ export default function Home() {
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <a href='/doc/Cover_Letter.pdf' download='Fajobi Abioudun Resume.pdf' className='cursor-pointer'>Download CV</a>
+                  <a href='/doc/Fajobi Abioudun Resume.pdf' download='Fajobi Abioudun Resume.pdf' className='cursor-pointer'>Download CV</a>
                 </Button>
               </div>
             </motion.div>
