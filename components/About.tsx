@@ -1,11 +1,9 @@
-// components/AboutMeSection.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Sparkles, Zap, Target, TrendingUp } from 'lucide-react';
 
-// Replace these with your actual VA images
 const VA_IMAGES = [
   '/images/va-1.jpg',
   '/images/va-2.jpg',
@@ -46,7 +44,7 @@ export default function AboutMeSection() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Auto-rotate images
+ 
   useEffect(() => {
     if (!isAutoPlaying) return;
 
@@ -72,7 +70,7 @@ export default function AboutMeSection() {
   return (
     <section className="py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -80,7 +78,7 @@ export default function AboutMeSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Meet Your Expert <span className="text-blue-600">Virtual Assistant</span>
+            Meet Your Expert <span className="text-emerald-600">Virtual Assistant</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Transforming workflows and amplifying success through strategic automation and process optimization
@@ -88,7 +86,7 @@ export default function AboutMeSection() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Images Slideshow */}
+          
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -100,7 +98,7 @@ export default function AboutMeSection() {
               onMouseEnter={() => setIsAutoPlaying(false)}
               onMouseLeave={() => setIsAutoPlaying(true)}
             >
-              {/* Main Image */}
+              
               <motion.div
                 key={currentImage}
                 initial={{ opacity: 0, scale: 1.1 }}
@@ -160,7 +158,7 @@ export default function AboutMeSection() {
               </div>
             </div>
 
-            {/* Stats Grid */}
+            
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -196,7 +194,7 @@ export default function AboutMeSection() {
             
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                Your Partner in <span className="text-blue-600">Business Excellence</span>
+                Your Partner in <span className="text-emerald-600">Business Excellence</span>
               </h3>
               <p className="text-gray-600 text-lg md:text-sm mb-4">
                 I&apos;m Fajobi, a dedicated Virtual Assistant and Workflow Automation Specialist committed to helping businesses and busy professionals simplify their processes, save time, and work more efficiently.

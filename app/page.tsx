@@ -50,29 +50,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="font-bold text-xl text-slate-900"
-            >
-              Fajobi Abiodun - VA Assistant
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="hidden md:flex space-x-8"
-            >
-              <a href="#services" className="text-slate-700 hover:text-slate-900 transition-colors">Services</a>
-              <a href="#skills" className="text-slate-700 hover:text-slate-900 transition-colors">Skills</a>
-              <a href="#contact" className="text-slate-700 hover:text-slate-900 transition-colors">Contact</a>
-            </motion.div>
-          </div>
-        </div>
-      </nav>
-
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -96,7 +73,7 @@ export default function Home() {
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <a href="#services">Learn More</a>
+                  <a href='/doc/Cover_Letter.pdf' download='Fajobi Abioudun Resume.pdf' className='cursor-pointer'>Download CV</a>
                 </Button>
               </div>
             </motion.div>
@@ -140,6 +117,10 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
+      </section>
+      
+      <section>
+        <AboutMeSection />
       </section>
 
       <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
@@ -185,7 +166,7 @@ export default function Home() {
         </div>
       </section>
 
-      <AboutMeSection />
+      
       <MyStory />
       <TestimonialsGrid />
 
@@ -225,75 +206,6 @@ export default function Home() {
           <SimpleInfiniteToolScroll />
         </div>
       </section>
-
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Let&apos;s Work Together</h2>
-            <p className="text-xl text-slate-300 mb-8">
-              Ready to automate your workflows and boost productivity? Get in touch today.
-            </p>
-            <div className="flex justify-center gap-6 mb-12">
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                href="mailto:fajobiabiodun99@gmail.com"
-                className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-slate-900 hover:bg-emerald-500 hover:text-white transition-colors"
-              >
-                <Mail className="w-6 h-6" />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://shorturl.at/xJRgL"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-slate-900 hover:bg-emerald-500 hover:text-white transition-colors"
-              >
-                <Linkedin className="w-6 h-6" />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://shorturl.at/xJRgL"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-slate-900 hover:bg-emerald-500 hover:text-white transition-colors"
-              >
-                <Twitter className='size-6'/>
-              </motion.a>
-
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://web.facebook.com/fajobi.abiodunemmanuel"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-slate-900 hover:bg-emerald-500 hover:text-white transition-colors"
-              >
-                <Facebook className='size-6'/>
-              </motion.a>
-            </div>
-            <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white" asChild>
-              <a href="mailto:fajobiabiodun99@gmail.com">
-                Send Message <ArrowRight className="ml-2 w-4 h-4" />
-              </a>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      <footer className="bg-slate-950 text-slate-400 py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <p>&copy; {new Date().getFullYear()} Fajobi Abiodun. All rights reserved.</p>
-          <p className='text-xs mt-1'>Developed by <span className='opcity-60 text-sm text-slate-100 font-bold'><a className='hover:text-emerald-400 cursor-pointer' href='https://golden-designs-studio.vercel.app/' target='_blank'>Michael Oluwaseun</a></span></p>
-        </div>
-      </footer>
     </div>
   );
 }
