@@ -2,8 +2,12 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Menu } from 'lucide-react'
 
 const Navbar = () => {
+    const showMobileNav = () => {
+        
+    }
   return (
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,6 +28,11 @@ const Navbar = () => {
               <a href="#skills" className="text-slate-700 hover:text-emerald-600 transition-colors">Skills</a>
               <a href="#contact" className="text-slate-700 hover:text-emerald-600 transition-colors">Contact</a>
               <a href='/projects' className='text-slate-700 hover:text-emerald-600 transition-colors'>Projects</a>
+            </motion.div>
+            <motion.div className='flex md:hidden'
+            onClick={showMobileNav}
+            >
+                <Menu size={16}/>
             </motion.div>
           </div>
         </div>

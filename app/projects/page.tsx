@@ -79,17 +79,17 @@ const ProjectGallery = () => {
   const openLightbox = (project: Project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
-    // Prevent background scroll
+    
     document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     setIsModalOpen(false);
-    // Restore background scroll
+    
     document.body.style.overflow = 'auto';
   };
 
-  // Handle ESC key press
+ 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeLightbox();
@@ -141,7 +141,7 @@ const ProjectGallery = () => {
               onKeyDown={(e) => e.key === 'Enter' && openLightbox(project)}
             >
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-200 h-full flex flex-col">
-                {/* Image Container */}
+                
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     src={project.imageUrl}
@@ -169,7 +169,7 @@ const ProjectGallery = () => {
                   </div>
                 </div>
 
-                {/* Content */}
+                
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                     {project.title}
@@ -178,7 +178,7 @@ const ProjectGallery = () => {
                     {project.description}
                   </p>
 
-                  {/* Tags */}
+                  
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag) => (
                       <span
@@ -190,7 +190,7 @@ const ProjectGallery = () => {
                     ))}
                   </div>
 
-                  {/* View Details Prompt */}
+                  
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                     <span className="text-sm text-blue-600 font-medium">
                       Click to view details →
