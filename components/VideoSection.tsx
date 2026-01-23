@@ -5,6 +5,9 @@ import { useRef, useState } from "react";
 export default function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const removeControls = () => {
+    setIsLoaded(!isLoaded);
+  }
 
   return (
     <div className="h-[65vh] md:h-[90vh] relative w-full overflow-hidden bg-black rounded-3xl">
@@ -29,7 +32,7 @@ export default function HeroVideo() {
       </video>
       
       {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50" onClick={removeControls}>
           <p className="text-white text-lg">Loading video controls...</p>
         </div>
       )}
