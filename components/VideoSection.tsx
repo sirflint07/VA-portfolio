@@ -1,20 +1,41 @@
 'use client'
 
+import { useRef, useState } from "react";
+
 export default function HeroVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <div className="h-[65vh] md:h-[90vh] relative w-full overflow-hidden bg-black rounded-3xl">
       <video
+        ref={videoRef}
         src="https://res.cloudinary.com/djpdesqrs/video/upload/v1769120549/Abiodun_Fajobi_Executive_VA_Introduction_r4n0b0.mp4"
         controls
-        autoPlay={true} 
-        muted={true}     
+        autoPlay={false} 
+        muted={false}     
         loop={true}
         playsInline={true}
         preload="metadata"
         className="absolute top-0 left-0 w-full h-full object-contain"
+        crossOrigin="anonymous"
       >
+        
+        <source 
+          src="https://res.cloudinary.com/djpdesqrs/video/upload/v1769120549/Abiodun_Fajobi_Executive_VA_Introduction_r4n0b0.mp4" 
+          type="video/mp4" 
+        />
+        Your browser does not support the video tag.
       </video>
-        <div className="absolute inset-0 overflow-hidden">
+      
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+          <p className="text-white text-lg">Loading video controls...</p>
+        </div>
+      )}
+
+      
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(8)].map((_, i) => (
           <div 
             key={i}
