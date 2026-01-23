@@ -132,7 +132,8 @@ const Navbar = () => {
                     Let&apos;s work together!
                   </p>
                   <a
-                    href="#contact"
+                    href="https://wa.me/2348107791294?text=Hello%20Emmanuel%2C%20I%20came%20across%20your%20profile%20and%20I%E2%80%99d%20like%20to%20discuss%20a%20potential%20freelance%2C%20virtual%20assistant%2C%20or%20administrative%2Fexecutive%20assistant%20opportunity%20with%20you.%20I%E2%80%99d%20love%20to%20connect"
+                    target='_balnk'
                     onClick={closeMobileNav}
                     className="block w-full py-3 bg-emerald-600 text-white font-medium rounded-lg hover:bg-emerald-700 transition-colors"
                   >
