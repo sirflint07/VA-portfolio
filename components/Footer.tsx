@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Mail, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { ArrowRight, Mail, Linkedin, Twitter, Facebook, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 
@@ -41,7 +41,7 @@ const Footer = () => {
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://shorturl.at/xJRgL"
+                href="https://x.com/fajobiabiodun"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-slate-900 hover:bg-emerald-500 hover:text-white transition-colors"
@@ -59,10 +59,20 @@ const Footer = () => {
               >
                 <Facebook className='size-6'/>
               </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://wa.me/2348107791294?text=Hello%20Emmanuel%2C%20I%20came%20across%20your%20profile%20and%20I%E2%80%99d%20like%20to%20discuss%20a%20potential%20freelance%2C%20virtual%20assistant%2C%20or%20administrative%2Fexecutive%20assistant%20opportunity%20with%20you.%20I%E2%80%99d%20love%20to%20connect"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-slate-900 hover:bg-emerald-500 hover:text-white transition-colors"
+              >
+                <MessageCircle className='size-6'/>
+              </motion.a>
             </div>
             <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white" asChild>
               <a href="mailto:fajobiabiodun99@gmail.com">
-                Send Message <ArrowRight className="ml-2 w-4 h-4" />
+                Send A Mail <ArrowRight className="ml-2 w-4 h-4" />
               </a>
             </Button>
           </motion.div>

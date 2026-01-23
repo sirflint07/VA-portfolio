@@ -13,8 +13,6 @@ import {
   Table,
   Users,
   Briefcase,
-  BarChart,
-  Layers
 } from 'lucide-react';
 
 const SimpleInfiniteToolScroll = () => {
@@ -34,7 +32,7 @@ const SimpleInfiniteToolScroll = () => {
     { name: 'Project Coordination', icon: Briefcase, color: 'text-indigo-500' },
   ];
 
-  // Create seamless loop by duplicating
+ 
   const loopedTools = [...tools, ...tools];
 
   return (

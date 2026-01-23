@@ -8,6 +8,8 @@ import AboutMeSection from '@/components/About';
 import TestimonialsGrid from '@/components/Testimonials';
 import MyStory from '@/components/MyStory';
 import SimpleInfiniteToolScroll from '@/components/Tools';
+import HeroVideo from '@/components/VideoSection';
+
 
 export default function Home() {
   const services = [
@@ -49,8 +51,8 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white w-[88vw] md:w-[92vw] mx-auto">
+      <section className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -119,7 +121,8 @@ export default function Home() {
         </div>
       </section>
       
-      <section>
+      <section className='mx-auto'>
+        <HeroVideo />
         <AboutMeSection />
       </section>
 

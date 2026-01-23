@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const toggleMobileNav = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
-    // Prevent/restore body scroll when menu is open
+    
     if (!isMobileMenuOpen) {
       document.body.style.overflow = 'hidden'
     } else {
@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1328px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -70,11 +70,11 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            {/* Backdrop */}
+           
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -84,7 +84,7 @@ const Navbar = () => {
               onClick={closeMobileNav}
             />
             
-            {/* Mobile Menu Panel */}
+            
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
