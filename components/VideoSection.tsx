@@ -13,7 +13,7 @@ export default function HeroVideo() {
     <div className="h-[65vh] md:h-[90vh] relative w-full overflow-hidden bg-black rounded-3xl">
       <video
         ref={videoRef}
-        src="https://res.cloudinary.com/djpdesqrs/video/upload/v1769120549/Abiodun_Fajobi_Executive_VA_Introduction_r4n0b0.mp4"
+        src="https://res.cloudinary.com/djpdesqrs/video/upload/v1769165612/Abiodun_Fajobi_Executive_VA_Introduction_-_v2_Background_Music_xy12qj.mp4"
         controls
         autoPlay={false} 
         muted={false}     
@@ -25,7 +25,7 @@ export default function HeroVideo() {
       >
         
         <source 
-          src="https://res.cloudinary.com/djpdesqrs/video/upload/v1769120549/Abiodun_Fajobi_Executive_VA_Introduction_r4n0b0.mp4" 
+          src="https://res.cloudinary.com/djpdesqrs/video/upload/v1769165612/Abiodun_Fajobi_Executive_VA_Introduction_-_v2_Background_Music_xy12qj.mp4" 
           type="video/mp4" 
         />
         Your browser does not support the video tag.
