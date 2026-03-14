@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 const Footer = () => {
   return (
 <section id="contact" className="pt-20 bg-slate-900">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 mb-8">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -17,7 +17,7 @@ const Footer = () => {
           >
             <h2 className="text-4xl font-bold text-white mb-4">Let&apos;s Work Together</h2>
             <p className="text-xl text-slate-300 mb-8">
-              Ready to automate your workflows and boost productivity? Get in touch today.
+              Ready to save time, reduce errors, and scale your business? Get in touch to automate your workflows
             </p>
             <div className="flex justify-center gap-6 mb-12">
               <motion.a

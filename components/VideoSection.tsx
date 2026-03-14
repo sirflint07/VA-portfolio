@@ -33,7 +33,7 @@ export default function HeroVideo() {
       
       {!isLoaded && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/50" onClick={removeControls}>
-          <p className="text-white text-lg">Loading video controls...</p>
+          <p className="text-white text-lg">Loading video controls...Tap to close</p>
         </div>
       )}
 

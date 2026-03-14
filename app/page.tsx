@@ -1,12 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Zap, Clock, Target, Mail, Linkedin, Github, CheckCircle2, Twitter, Facebook } from 'lucide-react';
+import { Zap, Clock, Target, CheckCircle2, MailIcon, ArrowDownToLine } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import AboutMeSection from '@/components/About';
 import TestimonialsGrid from '@/components/Testimonials';
-import MyStory from '@/components/MyStory';
 import SimpleInfiniteToolScroll from '@/components/Tools';
 import HeroVideo from '@/components/VideoSection';
 
@@ -61,21 +60,22 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                Automate Your Workflow,
-                <span className="text-emerald-600"> Amplify Your Success</span>
+                Turning Busy Work into Smart Systems
+                <span>{" "}|</span>
+                <span className="text-emerald-600">  Workflow Automation & Executive Operations Specialist</span>
               </h1>
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-                Expert Virtual Assistant specializing in workflow automation and process optimization.
-                I help businesses save time, reduce costs, and scale efficiently.
+                Executive operations professional specializing in workflow automation and process optimization. I help founders and teams streamline operations, eliminate manual tasks, and build efficient systems that support sustainable business growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white" asChild>
                   <a href="#contact">
-                    Get Started <ArrowRight className="ml-2 w-4 h-4" />
+                    Get in Touch <MailIcon className="ml-2 w-4 h-4" />
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <a href='/doc/Fajobi Abioudun Resume.pdf' download='Fajobi Abioudun Resume.pdf' className='cursor-pointer'>Download CV</a>
+                  <a href='/doc/Fajobi Abioudun Resume.pdf' download='Fajobi Abioudun Resume.pdf' className='cursor-pointer'>Download CV
+                  <ArrowDownToLine className='h-4 w-4 ml-2 mr-1'/></a>
                 </Button>
               </div>
             </motion.div>
@@ -137,7 +137,7 @@ export default function Home() {
           >
             <h2 className="text-4xl font-bold text-slate-900 mb-4">What I Offer</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Comprehensive virtual assistance and automation services tailored to your business needs
+              I provide tailored virtual assistance and automation solutions that simplify workflows, optimize processes, and allow your business to operate smarter, not harders
             </p>
           </motion.div>
 
@@ -169,8 +169,6 @@ export default function Home() {
         </div>
       </section>
 
-      
-      <MyStory />
       <TestimonialsGrid />
 
       <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">

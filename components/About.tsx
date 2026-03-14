@@ -26,18 +26,21 @@ const STATS = [
 ];
 
 const SKILLS = [
-  'Workflow Automation',
-  'Process Optimization',
-  'CRM Management',
-  'Calendar Management',
-  'Email Management',
-  'Social Media Management',
-  'Data Entry & Analysis',
-  'Project Management',
-  'Customer Support',
-  'Documentation',
-  'Travel Planning',
-  'Expense Reporting',
+ 'Workflow & Process Management',
+'Workflow Automation',
+'Process Optimization',
+'Project Management',
+'Task & Priority Management',
+'Digital & Administrative Operations',
+'CRM Management & Implementation',
+'Calendar & Email Management',
+'Documentation & File Organization',
+'Data Entry & Data Analysis',
+'Expense Reporting & Budget Tracking',
+'Travel Planning & Logistics',
+'Customer & Client Operations',
+'Customer Support & Client Onboarding',
+'Social Media & Digital Communications'
 ];
 
 export default function AboutMeSection() {
@@ -78,7 +81,7 @@ export default function AboutMeSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Meet Your Expert <span className="text-emerald-600">Virtual Assistant</span>
+            Meet Your Expert <span className="text-emerald-600">Executive Operations Professional</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Transforming workflows and amplifying success through strategic automation and process optimization
@@ -197,39 +200,23 @@ export default function AboutMeSection() {
                 Your Partner in <span className="text-emerald-600">Business Excellence</span>
               </h3>
               <p className="text-gray-600 text-lg md:text-sm mb-4">
-                I&apos;m Fajobi, a dedicated Virtual Assistant and Workflow Automation Specialist committed to helping businesses and busy professionals simplify their processes, save time, and work more efficiently.
+                Hi, I'm Fajobi, an Executive Operations Professional and Workflow Automation Specialist dedicated to helping businesses and busy leaders simplify operations, streamline workflows, and work more efficiently
               </p>
               <p className="text-gray-600 text-lg md:text-sm mb-4">
-                I&apos;m so glad you&apos;re here. This space is more than just a portfolio, it&apos;s a glimpse into the work I love, the problems I help solve, and the care I bring to every task. Whether it&apos;s organizing systems, streamlining workflows, or helping businesses stay focused on what matters most, my goal is to add value with intention and excellence. Take a moment to explore. Every project and service reflects my commitment to clarity, efficiency, and results. I hope something here connects with what you&apos;re looking for. And if it does, let&apos;s connect and create something meaningful together
+                I specialize in transforming manual processes into smart, automated systems that save time, reduce operational friction, and allow teams to focus on what truly drives growth.
+              </p>
+              <p className='text-gray-600 text-lg md:text-sm mb-4'>
+                This space is more than just a portfolio — it&apos;s a reflection of the work I&apos;m passionate about and the value I bring to the organizations I support. From optimizing workflows and organizing digital systems to implementing automation that improves productivity, my goal is always the same: to create clarity, efficiency, and sustainable operational structure.
+              </p>
+              <p className='text-gray-600 text-lg md:text-sm mb-4'>
+              Feel free to explore. Each project and service here represents my commitment to thoughtful execution, strategic support, and measurable results.
               </p>
               <p className="text-gray-600 text-lg">
-                My mission is to transform chaotic workflows into streamlined processes, allowing you 
-                to focus on what truly matters—growing your business.
+               If you&apos;re looking for someone who can help simplify operations and build systems that allow your business to scale more effectively, I&apos;d be glad to connect.
               </p>
             </div>
 
-            {/* Core Services */}
-            <div>
-              <h4 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <Zap className="w-6 h-6 text-blue-600" />
-                Core Expertise
-              </h4>
-              <div className="grid grid-cols-2 gap-3">
-                {SKILLS.map((skill, index) => (
-                  <motion.div
-                    key={skill}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.6 + index * 0.05 }}
-                    whileHover={{ x: 5 }}
-                    className="flex items-center gap-2"
-                  >
-                    <div className="w-2 h-2 bg-blue-600 rounded-full" />
-                    <span className="text-gray-700">{skill}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+            
 
             {/* Philosophy */}
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl border border-blue-100">
@@ -237,8 +224,7 @@ export default function AboutMeSection() {
                 My Philosophy
               </h4>
               <p className="text-gray-700 italic mb-4">
-                {`"Efficiency isn't about doing more in less time—it's about creating systems that 
-                work smarter, allowing businesses to achieve more with less effort."`}
+                {`"I don’t just optimize time, I optimize systems, helping businesses achieve more with less effort."`}
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
@@ -264,6 +250,28 @@ export default function AboutMeSection() {
             </motion.button>
           </motion.div>
         </div>
+
+        {/* Core Services */}
+            <div className='max-w-4xl p-2 mx-auto mt-16'>
+              <h4 className="text-4xl font-semibold text-gray-900 mb-4 flex items-center gap-2 underline underline-offset-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                Core Expertise
+              </h4>
+              <div className="grid grid-cols-2 gap-3">
+                {SKILLS.map((skill, index) => (
+                  <motion.div
+                    key={skill}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.6 + index * 0.05 }}
+                    whileHover={{ x: 5 }}
+                    className="flex items-center gap-2"
+                  >
+                    <div className="w-2 h-2 bg-blue-600 rounded-full" />
+                    <span className="text-gray-700">{skill}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
       </div>
     </section>
   );
