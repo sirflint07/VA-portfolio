@@ -4,13 +4,8 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { X, ExternalLink, Github } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Project } from '@/constants';
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-}
 
 const projects: Project[] = [
   {
@@ -26,30 +21,81 @@ const projects: Project[] = [
     imageUrl: '/img/excel-data-entry.jpg',
   },
   {
-    id: 3,
-    title: 'Inbox Management',
-    description: 'Professional email organization reducing response time by 70%.',
-    imageUrl: '/img/inbox-management.jpg',
-  },
-  {
-    id: 4,
-    title: 'Presentation',
-    description: 'Impactful presentations with data visualization and brand consistency.',
-    imageUrl: '/img/presentation.jpg',
-  },
-  {
-    id: 5,
-    title: 'Zap Automation',
-    description: 'Zapier workflows saving 15+ hours weekly on repetitive tasks.',
-    imageUrl: '/img/zap-automation.jpg',
-  },
-  {
     id: 6,
     title: 'CRM Dashboard',
     description: 'Interactive dashboards with real-time analytics and KPI tracking.',
     imageUrl: '/img/CRM-Setup Process.jpg',
   },
+  {
+    id: 7,
+    title: 'Travel plan and Itinerary',
+    description: 'Travelling schedule plans.',
+    imageUrl: '/img/CRM-Setup Process.jpg',
+    link: 'https://docs.google.com/presentation/d/1T0WMjBgF-pWSAQYthA_DtWsy6HOrq5D9WzOXMHtQg6o/edit?usp=sharing'
+  },
+  {
+    id: 8,
+    title: 'Proposal Writing',
+    description: 'Professional writing of propposals for any type of job offers',
+    imageUrl: '/img/proposal.png',
+    link: 'https://docs.google.com/document/d/1obVL1TUyfdMD-O1osKzhD8xnmUt6BWS7Uia0-ChSCEw/edit?'
+  }
 ];
+
+const presentationProjects:Project[] = [
+{
+    id: 1,
+    title: 'Presentation',
+    description: 'Impactful presentations with data visualization and brand consistency.',
+    imageUrl: '/img/presentation.jpg',
+    tag: 'presentation'
+  }
+]
+
+const inbox:Project[] = [
+{
+  id: 1,
+  title: '',
+  description: 'Impactful presentations with data visualization and brand consistency.',
+  imageUrl: '/img/inbox-management.jpg',
+  tag: 'presentation'
+},
+{
+  id: 2,
+  title: '',
+  description: 'Impactful presentations with data visualization and brand consistency.',
+  imageUrl: '/img/Inbox-Management-1.jpeg',
+  tag: 'presentation'
+},
+{
+  id: 3,
+  title: '',
+  description: 'Impactful presentations with data visualization and brand consistency.',
+  imageUrl: '/img/Inbox-Management-2.jpeg',
+  tag: 'presentation'
+}
+]
+
+const automation:Project[] = [
+  {
+    id: 1,
+    title: '',
+    description: 'From Google form ~ Data collection ~ to Automatic Response ~ CRM Lead generation',
+    imageUrl: '/img/zap-automation.jpg',
+  },
+  {
+    id: 2,
+    title: '',
+    description: 'From Google form ~ Data collection ~ to Automatic Response ~ CRM Lead generation',
+    imageUrl: '/img/Workflow-Automation-1.jpeg',
+  },
+  {
+    id: 3,
+    title: '',
+    description: 'From Google form ~ Data collection ~ to Automatic Response ~ CRM Lead generation',
+    imageUrl: '/img/Workflow-Automation-2.jpeg',
+  },
+]
 
 const ProjectGallery = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -134,7 +180,6 @@ const ProjectGallery = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                 </div>
-
                 
                 <div className="p-4 flex-1 flex flex-col">
                   <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
@@ -143,9 +188,6 @@ const ProjectGallery = () => {
                   <p className="text-gray-600 text-sm mb-2 flex-1">
                     {project.description}
                   </p>
-
-                  
-                
                   
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                     <span className="text-sm text-blue-600 font-medium">
@@ -156,6 +198,176 @@ const ProjectGallery = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Presentations */}
+        <br /><br />
+        <div>
+          <h3 className='text-gray-600 text-xl font-semibold mb-3'>Presentations</h3>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
+            {
+              presentationProjects.map((project) => (
+                  <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              className="group cursor-pointer"
+              onClick={() => openLightbox(project)}
+              role="button"
+              tabIndex={0}
+              aria-label={`View ${project.title} project details`}
+              onKeyDown={(e) => e.key === 'Enter' && openLightbox(project)}
+            >
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-200 h-full flex flex-col">
+                
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={project.imageUrl}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2YzZjRmNSIvPjwvc3ZnPg=="
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                </div>
+                
+                <div className="p-4 flex-1 flex flex-col">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2 flex-1">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <span className="text-sm text-blue-600 font-medium">
+                      Click to view details →
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+              ))
+            }
+          </div>
+        </div>
+
+        <br/><br />
+        <div>
+          <h3 className='text-gray-600 text-xl font-semibold mb-3'>Inbox Management</h3>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
+            {
+              inbox.map((project) => (
+                <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              className="group cursor-pointer"
+              onClick={() => openLightbox(project)}
+              role="button"
+              tabIndex={0}
+              aria-label={`View ${project.title} project details`}
+              onKeyDown={(e) => e.key === 'Enter' && openLightbox(project)}
+            >
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-200 h-full flex flex-col">
+                
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={project.imageUrl}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2YzZjRmNSIvPjwvc3ZnPg=="
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                </div>
+                
+                <div className="p-4 flex-1 flex flex-col">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2 flex-1">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <span className="text-sm text-blue-600 font-medium">
+                      Click to view details →
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+              ))
+            }
+          </div>
+        </div>
+
+        {/* Presentations */}
+        <br /><br />
+        <div>
+          <h3 className='text-gray-600 text-xl font-semibold mb-3'>Workflow Automation</h3>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
+            {
+              automation.map((project) => (
+                  <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              className="group cursor-pointer"
+              onClick={() => openLightbox(project)}
+              role="button"
+              tabIndex={0}
+              aria-label={`View ${project.title} project details`}
+              onKeyDown={(e) => e.key === 'Enter' && openLightbox(project)}
+            >
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-200 h-full flex flex-col">
+                
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={project.imageUrl}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2YzZjRmNSIvPjwvc3ZnPg=="
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                </div>
+                
+                <div className="p-4 flex-1 flex flex-col">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2 flex-1">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <span className="text-sm text-blue-600 font-medium">
+                      Click to view details →
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+              ))
+            }
+          </div>
         </div>
       </div>
 

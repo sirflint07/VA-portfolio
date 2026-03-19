@@ -40,7 +40,8 @@ const SKILLS = [
 'Travel Planning & Logistics',
 'Customer & Client Operations',
 'Customer Support & Client Onboarding',
-'Social Media & Digital Communications'
+'Social Media & Digital Communications',
+'Proposal Writing'
 ];
 
 export default function AboutMeSection() {
@@ -81,7 +82,7 @@ export default function AboutMeSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Meet Your Expert <span className="text-emerald-600">Executive Operations Professional</span>
+            Meet Your <span className="text-emerald-600">Executive Operations Professional</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Transforming workflows and amplifying success through strategic automation and process optimization

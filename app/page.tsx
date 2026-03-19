@@ -25,7 +25,7 @@ export default function Home() {
     {
       icon: <Target className="w-8 h-8" />,
       title: 'Process Optimization',
-      description: 'Analyze and improve your workflows to save time and increase productivity.',
+      description: 'Analyze and improve your workflows to save time and increase productivity.'
     },
   ];
 
@@ -53,18 +53,18 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white w-[88vw] md:w-[92vw] mx-auto">
       <section className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-4 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
                 Turning Busy Work into Smart Systems
-                <span>{" "}|</span>
-                <span className="text-emerald-600">  Workflow Automation & Executive Operations Specialist</span>
+                
+                <span className="text-emerald-600 text-3xl inline-block mt-2">Workflow Automation & Executive Operations Specialist</span>
               </h1>
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-lg lg:text-xl text-slate-600 mb-8 leading-relaxed lg:max-w-xl">
                 Executive operations professional specializing in workflow automation and process optimization. I help founders and teams streamline operations, eliminate manual tasks, and build efficient systems that support sustainable business growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
