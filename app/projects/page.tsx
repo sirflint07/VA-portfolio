@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { X, ExternalLink, Github } from 'lucide-react';
+import { X, ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Project } from '@/constants';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 
 const projects: Project[] = [
@@ -21,24 +23,31 @@ const projects: Project[] = [
     imageUrl: '/img/excel-data-entry.jpg',
   },
   {
-    id: 6,
+    id: 3,
     title: 'CRM Dashboard',
     description: 'Interactive dashboards with real-time analytics and KPI tracking.',
     imageUrl: '/img/CRM-Setup Process.jpg',
   },
   {
-    id: 7,
+    id: 4,
     title: 'Travel plan and Itinerary',
     description: 'Travelling schedule plans.',
     imageUrl: '/img/CRM-Setup Process.jpg',
     link: 'https://docs.google.com/presentation/d/1T0WMjBgF-pWSAQYthA_DtWsy6HOrq5D9WzOXMHtQg6o/edit?usp=sharing'
   },
   {
-    id: 8,
+    id: 5,
     title: 'Proposal Writing',
     description: 'Professional writing of propposals for any type of job offers',
     imageUrl: '/img/proposal.png',
     link: 'https://docs.google.com/document/d/1obVL1TUyfdMD-O1osKzhD8xnmUt6BWS7Uia0-ChSCEw/edit?'
+  },
+  {
+    id: 5,
+    title: 'Data Management',
+    description: 'Managing your data online and offline',
+    imageUrl: '/img/Data-Management-33.jpeg',
+    link: ''
   }
 ];
 
@@ -188,6 +197,17 @@ const ProjectGallery = () => {
                   <p className="text-gray-600 text-sm mb-2 flex-1">
                     {project.description}
                   </p>
+                  <div>
+                    {project.link && (
+                      <Link href={project.link} target='_blank'>
+                      <Button className='flex justify-center items-center gap-2 px-4 py-2'>
+                          <span className='inline-block'>Open link</span>
+                          <span className='inline-block'><ArrowUpRight /></span>
+                      </Button>
+                      </Link>
+                      
+                    )}
+                  </div>
                   
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                     <span className="text-sm text-blue-600 font-medium">
@@ -313,7 +333,7 @@ const ProjectGallery = () => {
           </div>
         </div>
 
-        {/* Presentations */}
+        {/*Workflow Automation */}
         <br /><br />
         <div>
           <h3 className='text-gray-600 text-xl font-semibold mb-3'>Workflow Automation</h3>
@@ -373,72 +393,70 @@ const ProjectGallery = () => {
 
       
       <AnimatePresence>
-        {isModalOpen && selectedProject && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              variants={modalVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-              onClick={closeLightbox}
-            >
-              {/* Modal Container */}
-              <motion.div
-                variants={imageVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                className="relative max-w-4xl w-full max-h-[90vh] bg-white rounded-2xl overflow-hidden"
-                onClick={(e) => e.stopPropagation()}
-              >
-                
-                <button
-                  onClick={closeLightbox}
-                  className="absolute top-4 right-4 z-10 p-2 bg-black/50 backdrop-blur-sm text-white rounded-full hover:bg-black/70 transition-colors"
-                  aria-label="Close lightbox"
-                >
-                  <X size={24} />
-                </button>
+  {isModalOpen && selectedProject && (
+    <>
+     
+      <motion.div
+        variants={modalVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+        onClick={closeLightbox}
+      >
+        
+        <motion.div
+          variants={imageVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          className="relative bg-black rounded-2xl overflow-hidden max-w-[90vw] max-h-[90vh] flex flex-col"
+          onClick={(e) => e.stopPropagation()}
+        >
+          
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 z-20 p-2 bg-black/60 backdrop-blur-sm text-white rounded-full hover:bg-black/80 transition-colors"
+            aria-label="Close lightbox"
+          >
+            <X size={24} />
+          </button>
 
-                
-                <div className="h-full overflow-y-auto">
-                  
-                  <div className="relative h-96 md:h-[400px]">
-                    <Image
-                      src={selectedProject.imageUrl}
-                      alt={selectedProject.title}
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      priority
-                    />
-                  </div>
+         
+          <div className="flex items-center justify-center p-4">
+            <img
+              src={selectedProject.imageUrl}
+              alt={selectedProject.title}
+              className="max-w-[85vw] max-h-[70vh] w-auto h-auto object-contain rounded-lg"
+              style={{
+                width: 'auto',
+                height: 'auto',
+                maxWidth: '85vw',
+                maxHeight: '70vh'
+              }}
+            />
+          </div>
 
-                 
-                  <div className="p-6 md:p-5">
-                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-6">
-                      <div>
-                        <h3 className="text-2xl md:text-2xl font-bold text-gray-900 mb-2">
-                          {selectedProject.title}
-                        </h3>
-                        <p className="text-gray-600 text-lg">
-                          {selectedProject.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 text-white text-sm text-center">
-              <p>Press ESC or click outside to close</p>
+         
+          <div className="bg-white p-5 md:p-6">
+            <div className="flex flex-col">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                {selectedProject.title}
+              </h3>
+              <p className="text-gray-600 text-base md:text-lg">
+                {selectedProject.description}
+              </p>
             </div>
-          </>
-        )}
-      </AnimatePresence>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 text-white text-sm text-center">
+        <p>Press ESC or click outside to close</p>
+      </div>
+    </>
+  )}
+</AnimatePresence>
     </>
   );
 };
